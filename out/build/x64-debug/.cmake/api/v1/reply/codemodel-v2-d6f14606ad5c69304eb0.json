@@ -1,0 +1,145 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "source/chapter1",
+					"jsonFile" : "directory-source.chapter1-Debug-cc06a74f18ee197a1387.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "source/chapter1",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "source/staryei",
+					"jsonFile" : "directory-source.staryei-Debug-e4117723458304000281.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "source/staryei",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						2
+					],
+					"name" : "RaptorEngine",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Chapter1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Chapter1::@ab4abc019e2865748ce5",
+					"jsonFile" : "target-Chapter1-Debug-5f4e1f8b4f59fbd500c5.json",
+					"name" : "Chapter1",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RaptorApp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RaptorApp-Debug-2c757c8d254310e8b55a.json",
+					"name" : "RaptorApp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RaptorExternal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RaptorExternal-Debug-2595226b7c81ec4f6bde.json",
+					"name" : "RaptorExternal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RaptorFoundation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RaptorFoundation-Debug-b9d200a00db725f3ba1f.json",
+					"name" : "RaptorFoundation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "staryei::@4b4b0477b5fd91c15289",
+					"jsonFile" : "target-staryei-Debug-7bffc23c528a1137e1ee.json",
+					"name" : "staryei",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug",
+		"source" : "E:/Mastering-Graphics-Programming-with-Vulkan"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

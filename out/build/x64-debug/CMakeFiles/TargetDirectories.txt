@@ -1,0 +1,11 @@
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/CMakeFiles/RaptorFoundation.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/CMakeFiles/RaptorApp.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/CMakeFiles/RaptorExternal.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/CMakeFiles/edit_cache.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/chapter1/CMakeFiles/Chapter1.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/chapter1/CMakeFiles/edit_cache.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/chapter1/CMakeFiles/rebuild_cache.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/staryei/CMakeFiles/staryei.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/staryei/CMakeFiles/edit_cache.dir
+E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/staryei/CMakeFiles/rebuild_cache.dir
