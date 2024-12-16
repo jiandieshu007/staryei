@@ -8,7 +8,7 @@
 #include "graphics/command_buffer.hpp"
 #include "graphics/spirv_parser.hpp"
 #include "graphics/gpu_profiler.hpp"
-#include "graphics/raptor_imgui.hpp"
+#include "graphics/syi_imgui.hpp"
 #include "graphics/renderer.hpp"
 #include "graphics/render_scene.hpp"
 #include "graphics/gltf_scene.hpp"
@@ -41,7 +41,7 @@
 
 // Input callback
 static void input_os_messages_callback( void* os_event, void* user_data ) {
-    raptor::InputService* input = ( raptor::InputService* )user_data;
+    syi::InputService* input = ( syi::InputService* )user_data;
     input->on_event( os_event );
 }
 
@@ -72,7 +72,7 @@ struct AsynchronousLoadTask : enki::IPinnedTask {
         }
     }
 
-    raptor::AsynchronousLoader* async_loader;
+    syi::AsynchronousLoader* async_loader;
     enki::TaskScheduler*        task_scheduler;
     bool                        execute         = true;
 }; // struct AsynchronousLoadTask
@@ -86,7 +86,7 @@ int main( int argc, char** argv ) {
         InjectDefault3DModel();
     }
 
-    using namespace raptor;
+    using namespace syi;
     // Init services
     MemoryServiceConfiguration memory_configuration;
     memory_configuration.maximum_dynamic_size = rgiga( 2ull );
@@ -107,8 +107,8 @@ int main( int argc, char** argv ) {
     task_scheduler.Initialize( config );
 
     // window
-    WindowConfiguration wconf{ 1280, 800, "Raptor Chapter 4", &MemoryService::instance()->system_allocator};
-    raptor::Window window;
+    WindowConfiguration wconf{ 1280, 800, "syi Chapter 4", &MemoryService::instance()->system_allocator};
+    syi::Window window;
     window.init( &wconf );
 
     InputService input;
@@ -158,7 +158,7 @@ int main( int argc, char** argv ) {
 
         StringBuffer temporary_name_buffer;
         temporary_name_buffer.init( 1024, &scratch_allocator );
-        cstring frame_graph_path = temporary_name_buffer.append_use_f( "%s/%s", RAPTOR_WORKING_FOLDER, "graph.json" );
+        cstring frame_graph_path = temporary_name_buffer.append_use_f( "%s/%s", syi_WORKING_FOLDER, "graph.json" );
 
         frame_graph.parse( frame_graph_path, &scratch_allocator );
         frame_graph.compile();
@@ -168,19 +168,19 @@ int main( int argc, char** argv ) {
         // Parse techniques
         GpuTechniqueCreation gtc;
         temporary_name_buffer.clear();
-        cstring full_screen_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", RAPTOR_SHADER_FOLDER, "fullscreen.json" );
+        cstring full_screen_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", syi_SHADER_FOLDER, "fullscreen.json" );
         render_resources_loader.load_gpu_technique( full_screen_pipeline_path );
 
         temporary_name_buffer.clear();
-        cstring main_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", RAPTOR_SHADER_FOLDER, "main.json" );
+        cstring main_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", syi_SHADER_FOLDER, "main.json" );
         render_resources_loader.load_gpu_technique( main_pipeline_path );
 
         temporary_name_buffer.clear();
-        cstring pbr_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", RAPTOR_SHADER_FOLDER, "pbr_lighting.json" );
+        cstring pbr_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", syi_SHADER_FOLDER, "pbr_lighting.json" );
         render_resources_loader.load_gpu_technique( pbr_pipeline_path );
 
         temporary_name_buffer.clear();
-        cstring dof_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", RAPTOR_SHADER_FOLDER, "dof.json" );
+        cstring dof_pipeline_path = temporary_name_buffer.append_use_f( "%s/%s", syi_SHADER_FOLDER, "dof.json" );
         render_resources_loader.load_gpu_technique( dof_pipeline_path );
 
         scratch_allocator.free_marker( scratch_marker );
@@ -284,7 +284,7 @@ int main( int argc, char** argv ) {
         {
             ZoneScopedN( "ImGui Recording" );
 
-            if ( ImGui::Begin( "Raptor ImGui" ) ) {
+            if ( ImGui::Begin( "syi ImGui" ) ) {
                 ImGui::InputFloat( "Scene global scale", &scene->global_scale, 0.001f );
                 ImGui::SliderFloat3( "Light position", light_position.raw, -30.0f, 30.0f );
                 ImGui::InputFloat( "Light radius", &light_radius );
@@ -301,8 +301,8 @@ int main( int argc, char** argv ) {
                 }
 
                 static i32 present_mode = renderer.gpu->present_mode;
-                if ( ImGui::Combo( "Present Mode", &present_mode, raptor::PresentMode::s_value_names, raptor::PresentMode::Count ) ) {
-                    renderer.set_presentation_mode( ( raptor::PresentMode::Enum )present_mode );
+                if ( ImGui::Combo( "Present Mode", &present_mode, syi::PresentMode::s_value_names, syi::PresentMode::Count ) ) {
+                    renderer.set_presentation_mode( ( syi::PresentMode::Enum )present_mode );
                 }
 
                 frame_graph.add_ui();

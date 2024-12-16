@@ -1,8 +1,8 @@
-# Install script for directory: E:/Mastering-Graphics-Programming-with-Vulkan
+# Install script for directory: F:/staryei
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "E:/Mastering-Graphics-Programming-with-Vulkan/out/install/x64-debug")
+  set(CMAKE_INSTALL_PREFIX "F:/staryei/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,8 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/chapter1/cmake_install.cmake")
-  include("E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/source/staryei/cmake_install.cmake")
+  include("F:/staryei/out/build/x64-debug/source/staryei/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/Mastering-Graphics-Programming-with-Vulkan/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "F:/staryei/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

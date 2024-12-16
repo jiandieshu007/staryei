@@ -1,8 +1,8 @@
-# Install script for directory: E:/Mastering-Graphics-Programming-with-Vulkan/source/staryei
+# Install script for directory: F:/staryei/source/staryei
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "E:/Mastering-Graphics-Programming-with-Vulkan/out/install/x64-debug")
+  set(CMAKE_INSTALL_PREFIX "F:/staryei/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

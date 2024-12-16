@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(RaptorEngine VERSION 0.1.0)
+project(syiEngine VERSION 0.1.0)
 
 find_package(Vulkan REQUIRED)
 
@@ -8,54 +8,54 @@ if (UNIX)
 find_package(SDL2 REQUIRED)
 endif()
 
-add_library(RaptorFoundation STATIC
-    source/raptor/foundation/array.hpp
-    source/raptor/foundation/assert.cpp
-    source/raptor/foundation/assert.hpp
-    source/raptor/foundation/bit.cpp
-    source/raptor/foundation/bit.hpp
-    source/raptor/foundation/blob_serialization.cpp
-    source/raptor/foundation/blob_serialization.hpp
-    source/raptor/foundation/blob.hpp
-    source/raptor/foundation/camera.cpp
-    source/raptor/foundation/camera.hpp
-    source/raptor/foundation/color.cpp
-    source/raptor/foundation/color.hpp
-    source/raptor/foundation/data_structures.cpp
-    source/raptor/foundation/data_structures.hpp
-    source/raptor/foundation/file.cpp
-    source/raptor/foundation/file.hpp
-    source/raptor/foundation/gltf.cpp
-    source/raptor/foundation/gltf.hpp
-    source/raptor/foundation/hash_map.hpp
-    source/raptor/foundation/log.cpp
-    source/raptor/foundation/log.hpp
-    source/raptor/foundation/memory_utils.hpp
-    source/raptor/foundation/memory.cpp
-    source/raptor/foundation/memory.hpp
-    source/raptor/foundation/numerics.cpp
-    source/raptor/foundation/numerics.hpp
-    source/raptor/foundation/platform.hpp
-    source/raptor/foundation/process.cpp
-    source/raptor/foundation/process.hpp
-    source/raptor/foundation/relative_data_structures.hpp
-    source/raptor/foundation/resource_manager.cpp
-    source/raptor/foundation/resource_manager.hpp
-    source/raptor/foundation/serialization.cpp
-    source/raptor/foundation/serialization.hpp
-    source/raptor/foundation/service_manager.cpp
-    source/raptor/foundation/service_manager.hpp
-    source/raptor/foundation/service.cpp
-    source/raptor/foundation/service.hpp
-    source/raptor/foundation/string.cpp
-    source/raptor/foundation/string.hpp
-    source/raptor/foundation/time.cpp
-    source/raptor/foundation/time.hpp
+add_library(syiFoundation STATIC
+    source/syi/foundation/array.hpp
+    source/syi/foundation/assert.cpp
+    source/syi/foundation/assert.hpp
+    source/syi/foundation/bit.cpp
+    source/syi/foundation/bit.hpp
+    source/syi/foundation/blob_serialization.cpp
+    source/syi/foundation/blob_serialization.hpp
+    source/syi/foundation/blob.hpp
+    source/syi/foundation/camera.cpp
+    source/syi/foundation/camera.hpp
+    source/syi/foundation/color.cpp
+    source/syi/foundation/color.hpp
+    source/syi/foundation/data_structures.cpp
+    source/syi/foundation/data_structures.hpp
+    source/syi/foundation/file.cpp
+    source/syi/foundation/file.hpp
+    source/syi/foundation/gltf.cpp
+    source/syi/foundation/gltf.hpp
+    source/syi/foundation/hash_map.hpp
+    source/syi/foundation/log.cpp
+    source/syi/foundation/log.hpp
+    source/syi/foundation/memory_utils.hpp
+    source/syi/foundation/memory.cpp
+    source/syi/foundation/memory.hpp
+    source/syi/foundation/numerics.cpp
+    source/syi/foundation/numerics.hpp
+    source/syi/foundation/platform.hpp
+    source/syi/foundation/process.cpp
+    source/syi/foundation/process.hpp
+    source/syi/foundation/relative_data_structures.hpp
+    source/syi/foundation/resource_manager.cpp
+    source/syi/foundation/resource_manager.hpp
+    source/syi/foundation/serialization.cpp
+    source/syi/foundation/serialization.hpp
+    source/syi/foundation/service_manager.cpp
+    source/syi/foundation/service_manager.hpp
+    source/syi/foundation/service.cpp
+    source/syi/foundation/service.hpp
+    source/syi/foundation/string.cpp
+    source/syi/foundation/string.hpp
+    source/syi/foundation/time.cpp
+    source/syi/foundation/time.hpp
  )
 
-set_property(TARGET RaptorFoundation PROPERTY CXX_STANDARD 17)
+set_property(TARGET syiFoundation PROPERTY CXX_STANDARD 17)
 
-target_compile_definitions(RaptorFoundation PRIVATE
+target_compile_definitions(syiFoundation PRIVATE
     _CRT_SECURE_NO_WARNINGS
 
     TRACY_ENABLE
@@ -63,29 +63,29 @@ target_compile_definitions(RaptorFoundation PRIVATE
     TRACY_NO_SYSTEM_TRACING
 )
 
-target_include_directories(RaptorFoundation PRIVATE
+target_include_directories(syiFoundation PRIVATE
     source
-    source/raptor
+    source/syi
 )
 
-add_library(RaptorApp STATIC
-    source/raptor/application/application.cpp
-    source/raptor/application/application.hpp
-    source/raptor/application/game_camera.cpp
-    source/raptor/application/game_camera.hpp
-    source/raptor/application/game_application.cpp
-    source/raptor/application/game_application.hpp
-    source/raptor/application/input.cpp
-    source/raptor/application/input.hpp
-    source/raptor/application/keys.cpp
-    source/raptor/application/keys.hpp
-    source/raptor/application/window.cpp
-    source/raptor/application/window.hpp
+add_library(syiApp STATIC
+    source/syi/application/application.cpp
+    source/syi/application/application.hpp
+    source/syi/application/game_camera.cpp
+    source/syi/application/game_camera.hpp
+    source/syi/application/game_application.cpp
+    source/syi/application/game_application.hpp
+    source/syi/application/input.cpp
+    source/syi/application/input.hpp
+    source/syi/application/keys.cpp
+    source/syi/application/keys.hpp
+    source/syi/application/window.cpp
+    source/syi/application/window.hpp
 )
 
-set_property(TARGET RaptorApp PROPERTY CXX_STANDARD 17)
+set_property(TARGET syiApp PROPERTY CXX_STANDARD 17)
 
-target_compile_definitions(RaptorApp PRIVATE
+target_compile_definitions(syiApp PRIVATE
     _CRT_SECURE_NO_WARNINGS
 
     TRACY_ENABLE
@@ -93,20 +93,20 @@ target_compile_definitions(RaptorApp PRIVATE
     TRACY_NO_SYSTEM_TRACING
 )
 
-target_include_directories(RaptorApp PRIVATE
+target_include_directories(syiApp PRIVATE
     source
-    source/raptor
+    source/syi
     )
 
 if (WIN32)
-    target_include_directories(RaptorApp PRIVATE
+    target_include_directories(syiApp PRIVATE
         binaries/SDL2-2.0.18/include)
 else()
-    target_include_directories(RaptorApp PRIVATE
+    target_include_directories(syiApp PRIVATE
         $${SDL2_INCLUDE_DIRS})
 endif()
 
-add_library(RaptorExternal STATIC
+add_library(syiExternal STATIC
     source/external/tlsf.c
 
     source/external/json.hpp
@@ -155,29 +155,29 @@ add_library(RaptorExternal STATIC
 )
 
 if (WIN32)
-    target_sources(RaptorExternal PRIVATE
+    target_sources(syiExternal PRIVATE
         source/external/StackWalker.cpp)
 endif()
 
-target_compile_definitions(RaptorExternal PRIVATE
+target_compile_definitions(syiExternal PRIVATE
     TRACY_ENABLE
     TRACY_ON_DEMAND
     TRACY_NO_SYSTEM_TRACING
 )
 
 if (WIN32)
-    target_include_directories(RaptorExternal PRIVATE
+    target_include_directories(syiExternal PRIVATE
         binaries/SDL2-2.0.18/include
-        source/raptor
+        source/syi
     )
 else()
-    target_link_libraries(RaptorExternal PRIVATE
+    target_link_libraries(syiExternal PRIVATE
         dl
     )
-    target_include_directories(RaptorExternal PRIVATE
+    target_include_directories(syiExternal PRIVATE
         ${SDL2_INCLUDE_DIRS})
 endif()
 
-set_property(TARGET RaptorExternal PROPERTY CXX_STANDARD 17)
+set_property(TARGET syiExternal PROPERTY CXX_STANDARD 17)
 
 add_subdirectory(source/staryei)

@@ -725,17 +725,17 @@ namespace syi {
 
 	struct DescriptorSetLayout {
 
-		VkDescriptorSetLayout           vk_descriptor_set_layout;
+		VkDescriptorSetLayout				vk_descriptor_set_layout;
 
-		std::vector<VkDescriptorSetLayoutBinding> vk_binding;
-		std::vector<DescriptorBinding> bindings;
-		uint8_t* index_to_binding = nullptr; // Mapping between binding point and binding data.
-		uint16_t                             num_bindings = 0;
-		uint16_t                             set_index = 0;
-		uint8_t                              bindless = 0;
-		uint8_t                              dynamic = 0;
+		VkDescriptorSetLayoutBinding*		vk_binding = nullptr;
+		DescriptorBinding*					bindings = nullptr;
+		uint8_t*							index_to_binding = nullptr; // Mapping between binding point and binding data.
+		uint16_t                            num_bindings = 0;
+		uint16_t                            set_index = 0;
+		uint8_t                             bindless = 0;
+		uint8_t                             dynamic = 0;
 
-		DescriptorSetLayoutHandle       handle;
+		DescriptorSetLayoutHandle			handle;
 
 	}; // struct DesciptorSetLayoutVulkan
 
@@ -743,12 +743,13 @@ namespace syi {
 
 		VkDescriptorSet                 vk_descriptor_set;
 
-		std::vector<ResourceHandle> resources ;
-		std::vector<SamplerHandle> samplers ;
+		// allocate when create it using allocator 
+		ResourceHandle*					resources = nullptr;
+		SamplerHandle*					samplers = nullptr;
 		uint16_t* bindings = nullptr;
 
-		const DescriptorSetLayout* layout = nullptr;
-		uint32_t                             num_resources = 0;
+		const DescriptorSetLayout*		layout = nullptr;
+		uint32_t						num_resources = 0;
 	}; // struct DesciptorSet
 
 	struct Pipeline {

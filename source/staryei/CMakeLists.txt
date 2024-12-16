@@ -2,9 +2,15 @@ add_executable(staryei
     graphics/GpuResource.hpp
     graphics/GpuResource.cpp
     graphics/GpuEnum.hpp
+    graphics/GpuDevice.hpp
+    graphics/GpuDevice.cpp 
+    graphics/CommandBuffer.hpp
+    graphics/CommandBuffer.cpp
+    graphics/SpirvParser.hpp
+    graphics/SpirvParser.cpp
 
     main.cpp
-)
+ "graphics/CommandBuffer.cpp")
 
 
 set_property(TARGET staryei PROPERTY CXX_STANDARD 20)
@@ -17,8 +23,8 @@ if (WIN32)
 endif()
 
 target_compile_definitions(staryei PRIVATE
-    RAPTOR_WORKING_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}"
-    RAPTOR_SHADER_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}/shaders/"
+    syi_WORKING_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}"
+    syi_SHADER_FOLDER="${CMAKE_CURRENT_SOURCE_DIR}/shaders/"
 )
 
 target_compile_definitions(staryei PRIVATE
@@ -30,7 +36,7 @@ target_compile_definitions(staryei PRIVATE
 target_include_directories(staryei PRIVATE
     .
     ..
-    ../raptor
+    ../syi
     ../../binaries/assimp/include
     ${Vulkan_INCLUDE_DIRS}
 )
@@ -65,9 +71,9 @@ else()
 endif()
 
 target_link_libraries(staryei PRIVATE
-    RaptorFoundation
-    RaptorExternal
-    RaptorApp
+    syiFoundation
+    syiExternal
+    syiApp
     ${Vulkan_LIBRARIES}
 )
 
